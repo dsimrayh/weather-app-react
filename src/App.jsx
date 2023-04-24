@@ -1,30 +1,35 @@
 import { useState } from 'react';
+import './style.css';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [counter, setCounter] = useState(0);
+
+  async function requestWeatherForecast() {
+    const url = 'https://api.weatherapi.com/v1/forecast.json';
+    const key = '3a1962b5b4fa48eab9012505231004';
+    try {
+      const response = await fetch(`${url}?key=${key}&q=chicago`);
+      const data = await response.json();
+      processWeatherData(data.current, data.forecast, data.location);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  function processWeatherData(currentWeather, forecast, locationData) {
+    console.log(currentWeather);
+    console.log(forecast);
+    console.log(locationData);
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src="" className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <button onClick={() => setCounter(counter + 1)}>Click Me!</button>
+      <p>The count is: {counter}</p>
+      <br></br>
+      <button onClick={requestWeatherForecast}>
+        Get Chicago weather forecast
+      </button>
     </>
   );
 }

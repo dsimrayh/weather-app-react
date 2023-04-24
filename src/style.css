@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #444;
+  padding: 1rem;
+}
+
+button {
+  padding: 0.5rem;
+}
+
+p {
+  color: #fff;
+  font-family: sans-serif;
+  margin-top: 1rem;
+}
+
+img {
+  display: block;
+  margin-top: 1rem;
+}
