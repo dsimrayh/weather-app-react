@@ -17,7 +17,7 @@ export default function processCurrentWeatherData(data) {
     wind_kph,
   } = data;
 
-  console.log({
+  return {
     cloud,
     condition,
     feelslike_f,
@@ -33,5 +33,5 @@ export default function processCurrentWeatherData(data) {
     wind_dir,
     wind_mph,
     wind_kph,
-  });
+  };
 }

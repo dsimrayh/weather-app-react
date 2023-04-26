@@ -13,7 +13,7 @@ export default function processForecastData(data) {
     },
   } = data;
 
-  console.log({
+  return {
     sunrise,
     sunset,
     daily_chance_of_rain,
@@ -24,5 +24,5 @@ export default function processForecastData(data) {
     mintemp_c,
     totalprecip_in,
     totalprecip_mm,
-  });
+  };
 }

@@ -5,7 +5,7 @@ import processLocationData from './utils/processLocationData';
 import './style.css';
 
 function App() {
-  const [counter, setCounter] = useState(0);
+  const [weather, setWeather] = useState({ location: '' });
 
   async function requestWeatherData() {
     const url = 'https://api.weatherapi.com/v1/forecast.json';
@@ -14,9 +14,11 @@ function App() {
       const response = await fetch(`${url}?key=${key}&q=chicago`);
       const data = await response.json();
 
-      processCurrentWeatherData(data.current);
-      processForecastData(data.forecast.forecastday[0]);
-      processLocationData(data.location);
+      const current = processCurrentWeatherData(data.current);
+      const forecast = processForecastData(data.forecast.forecastday[0]);
+      const location = processLocationData(data.location);
+
+      return { current, forecast, location };
     } catch (err) {
       console.error(err);
     }
@@ -24,10 +26,21 @@ function App() {
 
   return (
     <>
-      <button onClick={() => setCounter(counter + 1)}>Click Me!</button>
-      <p>The count is: {counter}</p>
-      <br></br>
-      <button onClick={requestWeatherData}>Get Chicago weather forecast</button>
+      <button
+        onClick={async () => {
+          try {
+            const weatherData = await requestWeatherData();
+            setWeather(weatherData);
+          } catch (err) {
+            console.error(err);
+          }
+        }}
+      >
+        Get Chicago weather forecast
+      </button>
+      {/* Time added as a visual way to confirm state is updating */}
+      <p>Local time:</p>
+      <p>{weather.location.localtime}</p>
     </>
   );
 }
