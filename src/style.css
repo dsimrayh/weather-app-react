@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +7,14 @@
 }
 
 body {
-  background-color: #444;
   padding: 1rem;
+  background: url("./assets/background.jpg");
+  background-size: 100%;
+  background-position: 0% 20%;
+
+  font-size: 2rem;
+  font-family: "Quicksand", sans-serif;
+  color: #fff;
 }
 
 button {
@@ -14,12 +22,49 @@ button {
 }
 
 p {
-  color: #fff;
-  font-family: sans-serif;
+  height: 2rem;
+  font-weight: 400;
   margin-top: 1rem;
 }
 
 img {
   display: block;
   margin-top: 1rem;
+}
+
+h1 {
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+form {
+  margin-top: 1rem;
+}
+
+label {
+  display: block;
+}
+
+input {
+  height: 2rem;
+  width: 25rem;
+}
+
+button[type="submit"] {
+  background: none;
+  outline: transparent;
+  border: none;
+  background-color: #1d9ff7;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  padding: 0.5rem 2rem;
+  border: 2px solid #1eb8ff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #167ec4;
 }
