@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import requestWeatherData from './api/requestWeatherData';
 import processWeatherData from './utils/processWeatherData';
+import PrimaryWeatherData from './components/PrimaryWeatherData';
 import './style.css';
 
 function App() {
@@ -21,11 +22,9 @@ function App() {
     event.preventDefault();
     if (!searchValue) return;
     try {
-      getWeather(searchValue);
+      await getWeather(searchValue);
     } catch (err) {
-      console.error(err);
-      setError(true);
-      setTimeout(() => setError(false), 3000);
+      console.log(err);
     }
   }
 
@@ -34,8 +33,11 @@ function App() {
       const data = await requestWeatherData(location);
       const weatherData = processWeatherData(data);
       setWeather(weatherData);
+      setSearchValue('');
     } catch (err) {
       console.error(err);
+      setError(true);
+      setTimeout(() => setError(false), 3000);
     }
   }
 
@@ -55,16 +57,7 @@ function App() {
       <p id="error" className={error ? '' : 'hidden'}>
         Error: Location not found.
       </p>
-      {weather ? (
-        <>
-          <p>{`${weather.location.name}, ${weather.location.region}`}</p>
-          <p>{weather.location.country}</p>
-          <p>Local time:</p>
-          <p>{weather.location.localtime}</p>
-        </>
-      ) : (
-        <p>No data</p>
-      )}
+      {weather ? <PrimaryWeatherData weather={weather} /> : <p>No data</p>}
     </>
   );
 }
