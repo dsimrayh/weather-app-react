@@ -1,3 +1,6 @@
+// processWeatherData() will take in the response from the API and return
+// a cleaned up object containing only the relevant weather data.
+
 export default function processWeatherData(weatherData) {
   const current = processCurrentWeatherData(weatherData.current);
   const forecast = processForecastData(weatherData.forecast.forecastday[0]);
@@ -74,10 +77,10 @@ function processForecastData(data) {
 }
 
 function processLocationData(data) {
-  const { name: city, region, country, localtime } = data;
+  const { name, region, country, localtime } = data;
 
   return {
-    city,
+    name,
     region,
     country,
     localtime,
