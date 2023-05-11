@@ -12,7 +12,6 @@ body {
   background-size: 100%;
   background-position: 0% 20%;
 
-  font-size: 2rem;
   font-family: "Quicksand", sans-serif;
   color: #fff;
 }
@@ -22,19 +21,11 @@ button {
 }
 
 p {
-  height: 2rem;
   font-weight: 400;
-  margin-top: 1rem;
-}
-
-img {
-  display: block;
-  margin-top: 1rem;
 }
 
 h1 {
   font-weight: 300;
-  text-decoration: underline;
 }
 
 form {
@@ -65,7 +56,7 @@ button[type="submit"] {
   cursor: pointer;
 }
 
-button[type="submit"] {
+button[type="submit"]:active {
   background-color: #167ec4;
 }
 
@@ -86,4 +77,33 @@ button[type="submit"] {
 
 #error.hidden {
   visibility: hidden;
+}
+
+#location-city-region {
+  font-size: 3.5rem;
+}
+#location-country {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#location-date,
+#location-time {
+  font-size: 1.5rem;
+}
+
+#current-weather {
+  margin-top: 1rem;
+}
+
+#current-weather-condition {
+  font-size: 4rem;
+}
+
+#current-weather-temp {
+  font-size: 6rem;
+}
+
+#current-weather-hi-low {
+  font-size: 2rem;
 }

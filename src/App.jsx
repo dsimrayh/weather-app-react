@@ -43,21 +43,27 @@ function App() {
 
   return (
     <>
-      <h1>Weather</h1>
-      <form onSubmit={handleSubmitForm}>
-        <label htmlFor="search">Enter location:</label>
-        <input
-          type="search"
-          id="search"
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-        ></input>
-        <button type="submit">Search</button>
-      </form>
-      <p id="error" className={error ? '' : 'hidden'}>
-        Error: Location not found.
-      </p>
-      {weather ? <PrimaryWeatherData weather={weather} /> : <p>No data</p>}
+      <header>
+        <h1>Weather</h1>
+      </header>
+      <main>
+        <div id="search-input">
+          <form onSubmit={handleSubmitForm}>
+            <label htmlFor="search">Enter location:</label>
+            <input
+              type="search"
+              id="search"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+            ></input>
+            <button type="submit">Search</button>
+          </form>
+          <p id="error" className={error ? '' : 'hidden'}>
+            Error: Location not found.
+          </p>
+        </div>
+        {weather ? <PrimaryWeatherData weather={weather} /> : <p>No data</p>}
+      </main>
     </>
   );
 }

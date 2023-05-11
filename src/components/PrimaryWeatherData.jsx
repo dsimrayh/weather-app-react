@@ -1,16 +1,29 @@
+import { format } from 'date-fns';
+
 export default function PrimaryWeatherData({ weather }) {
   return (
     <>
-      <p>{`${weather.location.name}, ${weather.location.region}`}</p>
-      <p>{weather.location.country}</p>
-      <p>
-        {weather.current.temp_f}º / {weather.current.condition}
-      </p>
-      <p>
-        High: {weather.forecast.maxtemp_f}º Low: {weather.forecast.mintemp_f}º
-      </p>
-      <p>Local time:</p>
-      <p>{weather.location.localtime}</p>
+      <div id="location">
+        <p id="location-city-region">{`${weather.location.name}, ${weather.location.region}`}</p>
+        <p id="location-country">
+          {weather.location.country === 'United States of America'
+            ? 'USA'
+            : weather.location.country}
+        </p>
+        <p id="location-date">
+          {format(new Date(weather.location.localtime), 'PPPP')}
+        </p>
+        <p id="location-time">
+          {format(new Date(weather.location.localtime), 'p')}
+        </p>
+      </div>
+      <div id="current-weather">
+        <p id="current-weather-condition">{weather.current.condition}</p>
+        <p id="current-weather-temp">{weather.current.temp_f}º</p>
+        <p id="current-weather-hi-low">
+          H: {weather.forecast.maxtemp_f}º L: {weather.forecast.mintemp_f}º
+        </p>
+      </div>
     </>
   );
 }
