@@ -3,6 +3,7 @@ import requestWeatherData from './api/requestWeatherData';
 import processWeatherData from './utils/processWeatherData';
 import PrimaryWeatherData from './components/PrimaryWeatherData';
 import './style.css';
+import logo from './assets/logo.png';
 
 function App() {
   const [weather, setWeather] = useState(null);
@@ -44,12 +45,13 @@ function App() {
   return (
     <>
       <header>
-        <h1>Weather</h1>
-      </header>
-      <main>
+        <div id="logo">
+          <img id="logo-img" src={logo} alt="logo-image"></img>
+          <h1>WeatherSpot</h1>
+        </div>
         <div id="search-input">
           <form onSubmit={handleSubmitForm}>
-            <label htmlFor="search">Enter location:</label>
+            <label htmlFor="search">Location:</label>
             <input
               type="search"
               id="search"
@@ -62,6 +64,8 @@ function App() {
             Error: Location not found.
           </p>
         </div>
+      </header>
+      <main>
         {weather ? <PrimaryWeatherData weather={weather} /> : <p>No data</p>}
       </main>
     </>

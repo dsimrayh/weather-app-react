@@ -12,7 +12,7 @@ export default function processWeatherData(weatherData) {
 function processCurrentWeatherData(data) {
   const {
     cloud,
-    condition: { text: condition },
+    condition: { text: condition, icon },
     feelslike_f,
     feelslike_c,
     humidity,
@@ -31,6 +31,7 @@ function processCurrentWeatherData(data) {
   return {
     cloud,
     condition,
+    icon,
     feelslike_f,
     feelslike_c,
     humidity,

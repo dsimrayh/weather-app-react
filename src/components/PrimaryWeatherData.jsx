@@ -18,8 +18,13 @@ export default function PrimaryWeatherData({ weather }) {
         </p>
       </div>
       <div id="current-weather">
-        <p id="current-weather-condition">{weather.current.condition}</p>
+        <div id="current-weather-condition">
+          <p id="condition-text">{weather.current.condition}</p>
+          <img id="condition-img" src={weather.current.icon}></img>
+        </div>
+
         <p id="current-weather-temp">{weather.current.temp_f}º</p>
+
         <p id="current-weather-hi-low">
           H: {weather.forecast.maxtemp_f}º L: {weather.forecast.mintemp_f}º
         </p>

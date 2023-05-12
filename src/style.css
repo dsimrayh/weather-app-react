@@ -25,39 +25,68 @@ p {
 }
 
 h1 {
-  font-weight: 300;
-}
-
-form {
-  margin-top: 1rem;
+  font-weight: 900;
 }
 
 label {
-  display: block;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 input {
   height: 2rem;
-  width: 25rem;
+  width: 15rem;
+  padding-left: 5px;
+  outline: transparent;
+  border: transparent;
+  border-radius: 6px;
+  background-color: rgba(240, 240, 240, 0.4);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 button[type="submit"] {
   background: none;
   outline: transparent;
   border: none;
-  background-color: #1d9ff7;
+  background-color: rgba(240, 240, 240, 0.4);
   color: #fff;
   font-size: 1rem;
   font-weight: 500;
   margin-left: 0.5rem;
   padding: 0.5rem 2rem;
-  border: 2px solid #1eb8ff;
   border-radius: 10px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
-button[type="submit"]:active {
+button[type="submit"]:hover {
   background-color: #167ec4;
+}
+
+button[type="submit"]:active {
+  background-color: #114799;
+}
+
+header {
+  margin-bottom: 6rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#logo {
+  display: flex;
+}
+
+#logo-img {
+  height: 48px;
+  width: 48px;
+}
+
+#search-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 #error {
@@ -66,7 +95,7 @@ button[type="submit"]:active {
   font-family: monospace;
   color: red;
   background-color: rgb(255, 221, 227);
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
   width: 240px;
   border-radius: 10px;
 
@@ -97,7 +126,16 @@ button[type="submit"]:active {
 }
 
 #current-weather-condition {
+  display: flex;
+}
+
+#condition-text {
   font-size: 4rem;
+}
+
+#condition-img {
+  height: 64px;
+  aspect-ratio: 1;
 }
 
 #current-weather-temp {
