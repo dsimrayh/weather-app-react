@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import requestWeatherData from './api/requestWeatherData';
 import processWeatherData from './utils/processWeatherData';
 import PrimaryWeatherData from './components/PrimaryWeatherData';
-import './style.css';
+import AdditionalWeatherData from './components/AdditionalWeatherData';
 import logo from './assets/logo.png';
+import './style.css';
 
 function App() {
   const [weather, setWeather] = useState(null);
@@ -19,6 +20,11 @@ function App() {
     })();
   }, []);
 
+  // Clear search input after successful search
+  useEffect(() => {
+    setSearchValue('');
+  }, [weather]);
+
   async function handleSubmitForm(event) {
     event.preventDefault();
     if (!searchValue) return;
@@ -31,10 +37,9 @@ function App() {
 
   async function getWeather(location) {
     try {
-      const data = await requestWeatherData(location);
-      const weatherData = processWeatherData(data);
-      setWeather(weatherData);
-      setSearchValue('');
+      const weatherData = await requestWeatherData(location);
+      const cleanedWeatherData = processWeatherData(weatherData);
+      setWeather(cleanedWeatherData);
     } catch (err) {
       console.error(err);
       setError(true);
@@ -66,7 +71,14 @@ function App() {
         </div>
       </header>
       <main>
-        {weather ? <PrimaryWeatherData weather={weather} /> : <p>No data</p>}
+        {weather ? (
+          <>
+            <PrimaryWeatherData weather={weather} />
+            <AdditionalWeatherData weather={weather} />
+          </>
+        ) : (
+          <p>No data</p>
+        )}
       </main>
     </>
   );

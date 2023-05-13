@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 
 export default function PrimaryWeatherData({ weather }) {
   return (
-    <>
+    <div id="primary-weather-data">
       <div id="location">
         <p id="location-city-region">{`${weather.location.name}, ${weather.location.region}`}</p>
         <p id="location-country">
@@ -29,6 +29,6 @@ export default function PrimaryWeatherData({ weather }) {
           H: {weather.forecast.maxtemp_f}º L: {weather.forecast.mintemp_f}º
         </p>
       </div>
-    </>
+    </div>
   );
 }

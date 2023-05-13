@@ -74,6 +74,27 @@ header {
   justify-content: space-between;
 }
 
+/* working =========================== */
+
+main {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid #000; */
+}
+
+#primary-weather-data {
+  /* border: 1px solid lime; */
+}
+
+#additional-weather-data {
+  font-size: 1.5rem;
+  display: grid;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+/* working =========================== */
+
 #logo {
   display: flex;
 }
