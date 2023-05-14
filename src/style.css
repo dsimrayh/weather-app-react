@@ -74,26 +74,12 @@ header {
   justify-content: space-between;
 }
 
-/* working =========================== */
-
 main {
   display: flex;
   justify-content: space-between;
-  /* border: 1px solid #000; */
 }
 
-#primary-weather-data {
-  /* border: 1px solid lime; */
-}
-
-#additional-weather-data {
-  font-size: 1.5rem;
-  display: grid;
-  align-items: center;
-  /* border: 1px solid red; */
-}
-
-/* working =========================== */
+/* ======== Header styles ======== */
 
 #logo {
   display: flex;
@@ -129,6 +115,8 @@ main {
   visibility: hidden;
 }
 
+/* ======== Primary weather data styles ======== */
+
 #location-city-region {
   font-size: 3.5rem;
 }
@@ -151,7 +139,7 @@ main {
 }
 
 #condition-text {
-  font-size: 4rem;
+  font-size: 5rem;
 }
 
 #condition-img {
@@ -160,9 +148,41 @@ main {
 }
 
 #current-weather-temp {
-  font-size: 6rem;
+  font-size: 7rem;
 }
 
 #current-weather-hi-low {
   font-size: 2rem;
+}
+
+/* ======== Additional weather data styles ======== */
+
+#additional-weather-data {
+  display: grid;
+  align-content: center;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 8rem 8rem;
+  grid-column-gap: 2rem;
+  grid-row-gap: 3rem;
+}
+
+.additional-weather-tile {
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  height: 9rem;
+  padding: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.additional-weather-tile-title {
+  font-size: 1.25rem;
+}
+
+.additional-weather-tile-content {
+  font-size: 2rem;
+  font-weight: 900;
 }
