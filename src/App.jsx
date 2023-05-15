@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import requestWeatherData from './api/requestWeatherData';
 import processWeatherData from './utils/processWeatherData';
 import SearchInput from './components/SearchInput';
-import WeatherData from './components/WeatherData';
+import Weather from './components/Weather';
 import logo from './assets/logo.png';
 import './style.css';
 
@@ -54,7 +54,7 @@ function App() {
       </header>
       <main>
         {weather ? (
-          <WeatherData
+          <Weather
             weather={weather}
             tempUnits={tempUnits}
             setTempUnits={setTempUnits}

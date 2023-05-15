@@ -1,4 +1,11 @@
-export default function CurrentWeather({ weather, tempUnits, setTempUnits }) {
+import sunrise from '../assets/sunrise.png';
+import sunset from '../assets/sunset.png';
+
+export default function CurrentWeatherData({
+  weather,
+  tempUnits,
+  setTempUnits,
+}) {
   return (
     <div id="current-weather">
       <div id="current-weather-condition">
@@ -29,6 +36,15 @@ export default function CurrentWeather({ weather, tempUnits, setTempUnits }) {
           ? `H: ${weather.forecast.maxtemp_f}º L: ${weather.forecast.mintemp_f}º`
           : `H: ${weather.forecast.maxtemp_c}º L: ${weather.forecast.mintemp_c}º`}
       </p>
+      <div id="sunrise">
+        <img className="sunrise-sunset-img" src={sunrise} alt="Sunrise: "></img>
+        <p>{weather.forecast.sunrise}</p>
+      </div>
+
+      <div id="sunset">
+        <img className="sunrise-sunset-img" src={sunset} alt="Sunset: "></img>
+        <p>{weather.forecast.sunset}</p>
+      </div>
     </div>
   );
 }

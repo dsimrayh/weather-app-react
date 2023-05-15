@@ -151,15 +151,27 @@ main {
   font-size: 7rem;
 }
 
-#current-weather-hi-low {
-  font-size: 2rem;
-}
-
 #temp-units {
   font-size: 1.5rem;
   font-weight: 900;
   margin-bottom: 1rem;
   cursor: pointer;
+}
+
+#current-weather-hi-low {
+  font-size: 2rem;
+}
+
+#sunrise,
+#sunset {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.sunrise-sunset-img {
+  margin-right: 1rem;
+  margin-top: 0.5rem;
 }
 
 .inactive {
