@@ -2,9 +2,7 @@ import { useState, useEffect } from 'react';
 import requestWeatherData from './api/requestWeatherData';
 import processWeatherData from './utils/processWeatherData';
 import SearchInput from './components/SearchInput';
-import Location from './components/Location';
-import CurrentWeather from './components/CurrrentWeather';
-import AdditionalWeatherData from './components/AdditionalWeatherData';
+import WeatherData from './components/WeatherData';
 import logo from './assets/logo.png';
 import './style.css';
 
@@ -56,17 +54,11 @@ function App() {
       </header>
       <main>
         {weather ? (
-          <>
-            <div id="primary-weather-data">
-              <Location weather={weather} />
-              <CurrentWeather
-                weather={weather}
-                tempUnits={tempUnits}
-                setTempUnits={setTempUnits}
-              />
-            </div>
-            <AdditionalWeatherData weather={weather} tempUnits={tempUnits} />
-          </>
+          <WeatherData
+            weather={weather}
+            tempUnits={tempUnits}
+            setTempUnits={setTempUnits}
+          />
         ) : (
           <p>No data</p>
         )}

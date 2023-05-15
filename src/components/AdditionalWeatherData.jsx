@@ -2,7 +2,7 @@
 
 export default function AdditionalWeatherData({ weather, tempUnits }) {
   return (
-    <div id="additional-weather-data">
+    <>
       <div className="additional-weather-tile">
         <p className="additional-weather-tile-title">Feels like</p>
         <p className="additional-weather-tile-content">
@@ -71,6 +71,6 @@ export default function AdditionalWeatherData({ weather, tempUnits }) {
           {weather.current.cloud}%
         </p>
       </div>
-    </div>
+    </>
   );
 }
