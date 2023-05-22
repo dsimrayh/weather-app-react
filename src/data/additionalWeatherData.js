@@ -6,11 +6,11 @@ export const additionalWeatherData = [
     unitsCanChange: true,
     contentF: {
       path: 'feelslike_f',
-      unit: ' º',
+      unit: 'º',
     },
     contentC: {
       path: 'feelslike_c',
-      unit: ' º',
+      unit: 'º',
     },
   },
   {
@@ -40,7 +40,7 @@ export const additionalWeatherData = [
     category: 'forecast',
     unitsCanChange: false,
     content: 'daily_chance_of_rain',
-    unit: ' %',
+    unit: '%',
   },
   {
     id: 4,
@@ -62,7 +62,7 @@ export const additionalWeatherData = [
     category: 'current',
     unitsCanChange: false,
     content: 'humidity',
-    unit: ' %',
+    unit: '%',
   },
   {
     id: 6,
@@ -105,6 +105,6 @@ export const additionalWeatherData = [
     category: 'current',
     unitsCanChange: false,
     content: 'cloud',
-    unit: ' %',
+    unit: '%',
   },
 ];
