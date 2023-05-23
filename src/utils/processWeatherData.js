@@ -6,6 +6,7 @@ export default function processWeatherData(weatherData) {
   const forecast = processForecastData(weatherData.forecast.forecastday[0]);
   const location = processLocationData(weatherData.location);
 
+  console.log({ current, forecast, location });
   return { current, forecast, location };
 }
 
@@ -61,6 +62,7 @@ function processForecastData(data) {
       totalprecip_in,
       totalprecip_mm,
     },
+    hour,
   } = data;
 
   return {
@@ -74,6 +76,7 @@ function processForecastData(data) {
     mintemp_c,
     totalprecip_in,
     totalprecip_mm,
+    hour,
   };
 }
 

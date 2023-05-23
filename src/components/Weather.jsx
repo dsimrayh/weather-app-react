@@ -1,6 +1,7 @@
 import Location from './Location';
 import CurrentWeatherData from './CurrentWeatherData';
 import AdditionalWeatherDataTile from './AdditionalWeatherDataTile';
+import HourlyForecastTile from './HourlyForecastTile';
 import { additionalWeatherData } from '../data/additionalWeatherData';
 
 export default function Weather({ weather, tempUnits, setTempUnits }) {
@@ -15,6 +16,10 @@ export default function Weather({ weather, tempUnits, setTempUnits }) {
     );
   });
 
+  const hourlyForecastTiles = weather.forecast.hour.map((hour, idx) => {
+    return <HourlyForecastTile key={idx} hourData={hour} />;
+  });
+
   return (
     <>
       <div id="primary-weather-data">
@@ -26,6 +31,7 @@ export default function Weather({ weather, tempUnits, setTempUnits }) {
         />
       </div>
       <div id="additional-weather-data">{additionalWeatherDataTiles}</div>
+      <div id="hourly-forecast">{hourlyForecastTiles}</div>
     </>
   );
 }
