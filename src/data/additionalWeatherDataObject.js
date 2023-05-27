@@ -1,4 +1,4 @@
-export const additionalWeatherData = [
+export const additionalWeatherDataObject = [
   {
     id: 0,
     title: 'Feels like',
