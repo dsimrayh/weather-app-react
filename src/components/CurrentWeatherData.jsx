@@ -10,7 +10,11 @@ export default function CurrentWeatherData({
     <div id="current-weather">
       <div id="current-weather-condition">
         <p id="condition-text">{weather.current.condition}</p>
-        <img id="condition-img" src={weather.current.icon}></img>
+        <img
+          id="condition-img"
+          src={weather.current.icon}
+          alt="condition-img"
+        ></img>
       </div>
       <p id="current-weather-temp">
         {tempUnits === 'F'

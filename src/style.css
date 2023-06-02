@@ -253,9 +253,12 @@ main {
 }
 
 .hourly-forecast-tile {
-  border: 1px dashed #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
   min-width: 9rem;
   height: 100%;
+  font-size: 1.5rem;
+  padding: 0.5rem;
 
   display: flex;
   flex-direction: column;
@@ -263,8 +266,25 @@ main {
   align-items: center;
 }
 
+.hourly-forecast-time,
+.hourly-forecast-temp {
+  font-weight: 900;
+}
+
+.hourly-forecast-condition {
+  text-align: center;
+  font-size: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 1;
+}
+
 #hourly-forecast-btn-group {
   width: 30%;
+  margin-top: 1rem;
 
   display: flex;
   justify-content: space-evenly;
