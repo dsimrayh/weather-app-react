@@ -8,9 +8,9 @@
 
 body {
   padding: 2rem;
-  background: url("./assets/background.jpg");
-  background-size: 100%;
-  background-position: 0% 20%;
+  background: url("./assets/background-images/night.jpg");
+  background-size: cover;
+  background-position: 0% 30%;
 
   font-family: "Quicksand", sans-serif;
   color: #fff;
@@ -43,11 +43,12 @@ input {
   border: transparent;
   border-radius: 6px;
   background-color: rgba(0, 0, 0, 0.15);
-  /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); */
+  color: #fff;
 }
 
 input:focus {
-  background-color: #eee;
+  /* background-color: #eee; */
+  border: 1px solid cyan;
 }
 
 button[type="submit"] {
@@ -61,7 +62,6 @@ button[type="submit"] {
   margin-left: 0.5rem;
   padding: 0.5rem 2rem;
   border-radius: 10px;
-  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); */
   cursor: pointer;
 }
 
