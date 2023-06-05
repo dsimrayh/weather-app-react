@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import requestWeatherData from './api/requestWeatherData';
 import processWeatherData from './utils/processWeatherData';
+import updateBackgoundImage from './utils/updateBackgroundImage';
 import SearchInput from './components/SearchInput';
 import Weather from './components/Weather';
 import logo from './assets/logo.png';
@@ -31,6 +32,7 @@ function App() {
       const weatherData = await requestWeatherData(location);
       const cleanedWeatherData = processWeatherData(weatherData);
       setWeather(cleanedWeatherData);
+      updateBackgoundImage(cleanedWeatherData.current.code);
     } catch (err) {
       console.error(err);
       setError(true);

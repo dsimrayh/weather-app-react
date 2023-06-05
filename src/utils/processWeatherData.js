@@ -6,14 +6,13 @@ export default function processWeatherData(weatherData) {
   const forecast = processForecastData(weatherData.forecast.forecastday[0]);
   const location = processLocationData(weatherData.location);
 
-  console.log({ current, forecast, location });
   return { current, forecast, location };
 }
 
 function processCurrentWeatherData(data) {
   const {
     cloud,
-    condition: { text: condition, icon },
+    condition: { text: condition, icon, code },
     feelslike_f,
     feelslike_c,
     humidity,
@@ -33,6 +32,7 @@ function processCurrentWeatherData(data) {
     cloud,
     condition,
     icon,
+    code,
     feelslike_f,
     feelslike_c,
     humidity,

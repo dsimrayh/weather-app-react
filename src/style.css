@@ -8,7 +8,7 @@
 
 body {
   padding: 2rem;
-  background: url("./assets/background-images/sunny.jpg");
+  background-image: url("./assets/background-images/sunny.jpg");
   background-size: cover;
   background-position: 0% 30%;
 
