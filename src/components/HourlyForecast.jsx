@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import HourlyForecastTile from './HourlyForecastTile';
 
 export default function HourlyForecast({ weather }) {
@@ -6,6 +6,10 @@ export default function HourlyForecast({ weather }) {
   // this state variable is used to track which "group" of 8 hours
   // should be dispalyed
   const [dailyForecastHourGroup, setDailyForecastHourGroup] = useState(1);
+
+  useEffect(() => {
+    setDailyForecastHourGroup(1);
+  }, [weather]);
 
   // gives the start and end indexes for each hour group within
   // the 24 hour array
