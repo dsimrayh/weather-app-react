@@ -32,7 +32,7 @@ function App() {
       const weatherData = await requestWeatherData(location);
       const cleanedWeatherData = processWeatherData(weatherData);
       setWeather(cleanedWeatherData);
-      updateBackgoundImage(cleanedWeatherData.current.code);
+      updateBackgoundImage(cleanedWeatherData);
     } catch (err) {
       console.error(err);
       setError(true);

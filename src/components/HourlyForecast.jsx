@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import HourlyForecastTile from './HourlyForecastTile';
 
-export default function HourlyForecast({ weather }) {
+export default function HourlyForecast({ weather, tempUnits }) {
   // the hourly forecast section will only display 8 hrs at a time.
   // this state variable is used to track which "group" of 8 hours
   // should be dispalyed
@@ -29,7 +29,7 @@ export default function HourlyForecast({ weather }) {
   const hourlyForecastTiles = hourGroup.map((hour, idx) => {
     return (
       <li key={idx}>
-        <HourlyForecastTile hourData={hour} />
+        <HourlyForecastTile tempUnits={tempUnits} hourData={hour} />
       </li>
     );
   });

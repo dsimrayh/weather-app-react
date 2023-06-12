@@ -15,7 +15,7 @@ export default function Weather({ weather, tempUnits, setTempUnits }) {
         />
       </div>
       <AdditionalWeatherData weather={weather} tempUnits={tempUnits} />
-      <HourlyForecast weather={weather} />
+      <HourlyForecast weather={weather} tempUnits={tempUnits} />
     </>
   );
 }

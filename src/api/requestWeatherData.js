@@ -8,8 +8,8 @@ export default async function requestWeatherData(location) {
     if (!response.ok) {
       throw new Error(`${response.status} ${response.statusText}`);
     }
-    const data = await response.json();
 
+    const data = await response.json();
     return data;
   } catch (err) {
     console.error(err);

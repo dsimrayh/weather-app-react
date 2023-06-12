@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 
-export default function HourlyForecastTile({ hourData }) {
+export default function HourlyForecastTile({ tempUnits, hourData }) {
   return (
     <div className="hourly-forecast-tile">
       <p className="hourly-forecast-time">
@@ -10,7 +10,9 @@ export default function HourlyForecastTile({ hourData }) {
         <p>{hourData.condition.text}</p>
         <img src={hourData.condition.icon} alt="condition-img"></img>
       </div>
-      <p className="hourly-forecast-temp">{hourData.temp_f}º</p>
+      <p className="hourly-forecast-temp">
+        {tempUnits === 'F' ? hourData.temp_f : hourData.temp_c}º
+      </p>
       <p></p>
     </div>
   );

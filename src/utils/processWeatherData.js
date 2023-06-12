@@ -26,6 +26,7 @@ function processCurrentWeatherData(data) {
     wind_dir,
     wind_mph,
     wind_kph,
+    is_day,
   } = data;
 
   return {
@@ -46,6 +47,7 @@ function processCurrentWeatherData(data) {
     wind_dir,
     wind_mph,
     wind_kph,
+    is_day,
   };
 }
 
